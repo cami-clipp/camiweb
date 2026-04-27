@@ -14,7 +14,7 @@ const SHEET_ID = 'PEGAR_ID_DE_TU_GOOGLE_SHEET'; // El ID está en la URL de tu S
 function doPost(e) {
   try {
     const sheet = SpreadsheetApp.openById(SHEET_ID).getActiveSheet();
-    const data = JSON.parse(e.postData.contents);
+    const data = e.parameter; // URLSearchParams llega como e.parameter
 
     // Si la sheet está vacía, agrega encabezados
     if (sheet.getLastRow() === 0) {

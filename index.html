@@ -272,11 +272,13 @@ nav.scrolled { box-shadow:0 1px 0 var(--sand); backdrop-filter:blur(12px); }
   display:block; padding:18px 20px; border-radius:12px;
   border:1.5px solid rgba(255,255,255,0.1);
   cursor:pointer; transition:all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  user-select:none;
 }
 .plan-opt-name { font-size:15px; font-weight:600; color:white; margin-bottom:4px; }
 .plan-opt-desc { font-size:12px; color:rgba(255,255,255,0.4); font-weight:300; line-height:1.4; }
-.plan-opt input:checked + label { border-color:var(--brick); background:rgba(181,67,42,0.12); }
-.plan-opt label:hover { border-color:rgba(181,67,42,0.45); }
+.plan-opt input:checked + label { border-color:var(--brick); background:rgba(181,67,42,0.18); }
+.plan-opt label:hover, .plan-opt label:active { border-color:rgba(181,67,42,0.6); }
 
 /* Botones de navegación */
 .step-nav { display:flex; align-items:center; justify-content:space-between; margin-top:28px; }
@@ -870,12 +872,12 @@ async function submitBrief() {
   };
 
   try {
+    const body = new URLSearchParams(data);
     await fetch(SHEET_URL, {
       method:'POST', mode:'no-cors',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(data)
+      body: body
     });
-  } catch(e) { /* no-cors — ignorar */ }
+  } catch(e) { /* ignorar */ }
 
   document.getElementById('briefProgress').style.display = 'none';
   document.getElementById('step-4').style.display = 'none';
