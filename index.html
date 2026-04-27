@@ -244,8 +244,8 @@ nav.scrolled { box-shadow:0 1px 0 var(--sand); backdrop-filter:blur(12px); }
 .brief-step-dot.done { background:rgba(181,67,42,0.5); }
 .brief-step-count { font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:0.1em; margin-left:auto; }
 
-.brief-step { display:none; animation:fadeUp 0.4s forwards; }
-.brief-step.active { display:block; }
+.brief-step { display:none; }
+.brief-step.active { display:block; animation:fadeUp 0.35s forwards; }
 
 .step-q { font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,32px); font-weight:700; color:white; line-height:1.2; margin-bottom:8px; }
 .step-hint { font-size:14px; color:rgba(255,255,255,0.4); font-weight:300; margin-bottom:28px; line-height:1.5; }
@@ -649,7 +649,7 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
       <p class="step-q">¿Cómo te llamás y cómo se llama tu negocio?</p>
       <p class="step-hint">Puede ser tu nombre, el de tu marca, o los dos.</p>
       <input class="step-input" type="text" id="f-nombre" placeholder="Ej: María — Florería Bloom" style="margin-bottom:12px;">
-      <input class="step-input" type="text" id="f-instagram" placeholder="Usuario de Instagram (sin @)">
+      <input class="step-input" type="text" id="f-instagram" placeholder="Instagram de tu negocio (no el tuyo personal, sin @)">
       <div class="step-nav">
         <span></span>
         <button class="btn-next" onclick="nextStep(0)">Siguiente →</button>
