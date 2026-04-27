@@ -756,7 +756,7 @@ const cardObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.plan-card').forEach(el => cardObs.observe(el));
 
 // Form submit → Google Sheets
-const SHEET_URL = 'PEGAR_URL_APPS_SCRIPT_AQUI';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwjVG40GYyrREs1o4VKE56agZj66Snxl6vg6rGFcUe7Qw20gHALMaDp-Z1r_ZUllcK1/exec';
 
 document.getElementById('briefForm').addEventListener('submit', async function(e) {
   e.preventDefault();
