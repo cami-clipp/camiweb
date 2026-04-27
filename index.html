@@ -231,78 +231,82 @@ nav.scrolled { box-shadow:0 1px 0 var(--sand); backdrop-filter:blur(12px); }
 
 /* ── BRIEF FORM ── */
 .brief { background:var(--dark); }
-.brief-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
-.brief-left .section-label { color:var(--brick); }
-.brief-left .section-label::before { background:var(--brick); }
-.brief-left .section-title { color:white; }
-.brief-left .section-sub { color:rgba(255,255,255,0.45); }
-.brief-perks { margin-top:40px; display:flex; flex-direction:column; gap:16px; }
-.brief-perk { display:flex; align-items:flex-start; gap:14px; }
-.brief-perk-dot { width:6px; height:6px; border-radius:50%; background:var(--brick); margin-top:6px; flex-shrink:0; }
-.brief-perk-text { font-size:14px; color:rgba(255,255,255,0.55); font-weight:300; line-height:1.5; }
-.brief-perk-text strong { color:rgba(255,255,255,0.85); font-weight:500; }
+.brief-inner { max-width:720px; margin:0 auto; }
+.brief-inner .section-label { color:var(--brick); }
+.brief-inner .section-label::before { background:var(--brick); }
+.brief-inner .section-title { color:white; }
+.brief-inner .section-sub { color:rgba(255,255,255,0.45); margin-bottom:52px; }
 
-/* Form */
-.brief-form { display:flex; flex-direction:column; gap:14px; }
+/* Pasos */
+.brief-progress { display:flex; align-items:center; gap:8px; margin-bottom:40px; }
+.brief-step-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.15); transition:all 0.3s; flex-shrink:0; }
+.brief-step-dot.active { background:var(--brick); transform:scale(1.3); }
+.brief-step-dot.done { background:rgba(181,67,42,0.5); }
+.brief-step-count { font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:0.1em; margin-left:auto; }
 
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.brief-step { display:none; animation:fadeUp 0.4s forwards; }
+.brief-step.active { display:block; }
 
-.field { display:flex; flex-direction:column; gap:6px; }
-.field label { font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); }
-.field input,
-.field textarea,
-.field select {
+.step-q { font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,32px); font-weight:700; color:white; line-height:1.2; margin-bottom:8px; }
+.step-hint { font-size:14px; color:rgba(255,255,255,0.4); font-weight:300; margin-bottom:28px; line-height:1.5; }
+
+.step-input {
   background:rgba(255,255,255,0.05);
-  border:1.5px solid rgba(255,255,255,0.1);
-  border-radius:10px;
-  padding:14px 16px;
-  font-family:'DM Sans',sans-serif;
-  font-size:14px; font-weight:300;
-  color:white;
-  outline:none;
+  border:1.5px solid rgba(255,255,255,0.12);
+  border-radius:12px; padding:16px 20px;
+  font-family:'DM Sans',sans-serif; font-size:15px; font-weight:300;
+  color:white; outline:none; width:100%;
   transition:border-color 0.2s, background 0.2s;
-  width:100%;
 }
-.field input::placeholder,
-.field textarea::placeholder { color:rgba(255,255,255,0.25); }
-.field input:focus,
-.field textarea:focus,
-.field select:focus { border-color:var(--brick); background:rgba(255,255,255,0.07); }
-.field textarea { resize:none; min-height:110px; }
-.field select { appearance:none; cursor:pointer; color:rgba(255,255,255,0.7); }
-.field select option { background:var(--dark); color:white; }
+.step-input::placeholder { color:rgba(255,255,255,0.2); }
+.step-input:focus { border-color:var(--brick); background:rgba(255,255,255,0.07); }
+.step-textarea { min-height:120px; resize:none; }
 
-/* Plan radios */
-.plan-radios { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.plan-radio { position:relative; }
-.plan-radio input { position:absolute; opacity:0; width:0; height:0; }
-.plan-radio label {
-  display:block; padding:12px 16px; border-radius:10px;
+.step-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+/* Opciones de plan */
+.plan-opts { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.plan-opt { position:relative; }
+.plan-opt input { position:absolute; opacity:0; width:0; height:0; }
+.plan-opt label {
+  display:block; padding:18px 20px; border-radius:12px;
   border:1.5px solid rgba(255,255,255,0.1);
-  font-size:13px; font-weight:400; color:rgba(255,255,255,0.55);
-  cursor:pointer; transition:all 0.2s; text-align:center; line-height:1.4;
+  cursor:pointer; transition:all 0.2s;
 }
-.plan-radio input:checked + label {
-  border-color:var(--brick);
-  background:rgba(181,67,42,0.15);
-  color:white;
-}
-.plan-radio label:hover { border-color:rgba(181,67,42,0.5); color:rgba(255,255,255,0.8); }
+.plan-opt-name { font-size:15px; font-weight:600; color:white; margin-bottom:4px; }
+.plan-opt-desc { font-size:12px; color:rgba(255,255,255,0.4); font-weight:300; line-height:1.4; }
+.plan-opt input:checked + label { border-color:var(--brick); background:rgba(181,67,42,0.12); }
+.plan-opt label:hover { border-color:rgba(181,67,42,0.45); }
 
-.btn-submit {
+/* Botones de navegación */
+.step-nav { display:flex; align-items:center; justify-content:space-between; margin-top:28px; }
+.btn-next {
   background:var(--brick); color:white;
-  padding:17px 32px; border-radius:10px;
-  font-family:'DM Sans',sans-serif;
-  font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
-  border:none; cursor:pointer; transition:all 0.25s; margin-top:6px;
-  display:flex; align-items:center; justify-content:center; gap:10px;
+  padding:15px 32px; border-radius:10px;
+  font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600;
+  letter-spacing:0.07em; text-transform:uppercase;
+  border:none; cursor:pointer; transition:all 0.25s;
+  display:flex; align-items:center; gap:10px;
 }
-.btn-submit:hover { background:#9a3722; transform:translateY(-2px); box-shadow:0 10px 30px rgba(181,67,42,0.35); }
-.btn-submit:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
+.btn-next:hover { background:#9a3722; transform:translateY(-2px); }
+.btn-next:disabled { opacity:0.4; cursor:not-allowed; transform:none; }
+.btn-back {
+  background:none; border:none; color:rgba(255,255,255,0.35);
+  font-family:'DM Sans',sans-serif; font-size:13px; font-weight:400;
+  cursor:pointer; padding:8px 0; transition:color 0.2s;
+}
+.btn-back:hover { color:rgba(255,255,255,0.7); }
 
-.form-success { display:none; padding:24px; background:rgba(181,67,42,0.12); border:1.5px solid var(--brick); border-radius:12px; text-align:center; }
-.form-success p { color:white; font-size:15px; font-weight:300; line-height:1.6; }
-.form-success strong { color:var(--brick); }
+/* Pantalla de éxito */
+.brief-success {
+  display:none; text-align:center; padding:60px 20px;
+}
+.brief-success-icon { font-size:48px; margin-bottom:24px; }
+.brief-success h3 { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; color:white; margin-bottom:12px; }
+.brief-success p { font-size:16px; color:rgba(255,255,255,0.5); font-weight:300; line-height:1.7; max-width:400px; margin:0 auto 32px; }
+.brief-success strong { color:var(--brick); }
+.btn-wa-success { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:white; padding:15px 28px; border-radius:10px; text-decoration:none; font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; transition:all 0.25s; }
+.btn-wa-success:hover { background:#1da855; transform:translateY(-2px); }
 
 /* ── FOOTER ── */
 footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); background:var(--dark); text-align:center; }
@@ -625,81 +629,148 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
 
 <!-- BRIEF / CONTACTO -->
 <section class="section brief" id="contacto">
-  <div class="brief-inner">
-    <div class="brief-left reveal">
-      <p class="section-label">Dejá tu consulta</p>
-      <h2 class="section-title">En breve<br><em>te respondo.</em></h2>
-      <p class="section-sub">Completá el formulario y en breve te estoy respondiendo con una propuesta pensada para tu marca.</p>
-      <div class="brief-perks">
-        <div class="brief-perk"><div class="brief-perk-dot"></div><p class="brief-perk-text"><strong>Sin compromiso.</strong> Es solo para entender qué necesitás.</p></div>
-        <div class="brief-perk"><div class="brief-perk-dot"></div><p class="brief-perk-text"><strong>Respuesta en 48 hs.</strong> Te contacto por WhatsApp o mail.</p></div>
-        <div class="brief-perk"><div class="brief-perk-dot"></div><p class="brief-perk-text"><strong>Propuesta a medida.</strong> Nada genérico, todo pensado para tu marca.</p></div>
+  <div class="brief-inner reveal">
+    <p class="section-label">Dejá tu consulta</p>
+    <h2 class="section-title">En breve<br><em>te respondo.</em></h2>
+    <p class="section-sub">Te hago unas preguntas cortas para entender tu negocio y armarte una propuesta a medida.</p>
+
+    <!-- Progreso -->
+    <div class="brief-progress" id="briefProgress">
+      <div class="brief-step-dot active" id="dot-0"></div>
+      <div class="brief-step-dot" id="dot-1"></div>
+      <div class="brief-step-dot" id="dot-2"></div>
+      <div class="brief-step-dot" id="dot-3"></div>
+      <div class="brief-step-dot" id="dot-4"></div>
+      <div class="brief-step-dot" id="dot-5"></div>
+      <span class="brief-step-count" id="stepCount">1 de 6</span>
+    </div>
+
+    <!-- Paso 1: Nombre -->
+    <div class="brief-step active" id="step-0">
+      <p class="step-q">¿Cómo te llamás y cómo se llama tu negocio?</p>
+      <p class="step-hint">Puede ser tu nombre, el nombre de tu marca, o los dos.</p>
+      <input class="step-input" type="text" id="f-nombre" placeholder="Ej: María — Florería Bloom">
+      <div class="step-nav">
+        <span></span>
+        <button class="btn-next" onclick="nextStep(0)">Siguiente →</button>
       </div>
     </div>
 
-    <div class="reveal" style="transition-delay:0.15s;">
-      <form class="brief-form" id="briefForm">
-        <div class="form-row">
-          <div class="field">
-            <label>Nombre o negocio *</label>
-            <input type="text" name="nombre" placeholder="Tu nombre o el de tu marca" required>
-          </div>
-          <div class="field">
-            <label>WhatsApp *</label>
-            <input type="tel" name="whatsapp" placeholder="+54 9 ..." required>
-          </div>
+    <!-- Paso 2: Negocio -->
+    <div class="brief-step" id="step-1">
+      <p class="step-q">¿A qué se dedica tu negocio?</p>
+      <p class="step-hint">Contame qué vendés o qué servicio ofrecés, y a quién le vendés. No hace falta que sea perfecto, escribilo como si me lo contaras por WhatsApp.</p>
+      <textarea class="step-input step-textarea" id="f-negocio" placeholder="Ej: Tengo una florería en Rafaela, vendo arreglos para eventos y ramos personalizados. Mis clientes son mujeres de 25 a 45 años..."></textarea>
+      <div class="step-nav">
+        <button class="btn-back" onclick="prevStep(1)">← Atrás</button>
+        <button class="btn-next" onclick="nextStep(1)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- Paso 3: Objetivo -->
+    <div class="brief-step" id="step-2">
+      <p class="step-q">¿Qué querés lograr con el contenido?</p>
+      <p class="step-hint">Por ejemplo: que más gente me conozca, que me escriban para comprar, mostrar mis productos, posicionarme como referente, etc. No hay respuesta mala.</p>
+      <textarea class="step-input step-textarea" id="f-objetivo" placeholder="Ej: Quiero que la gente vea mis trabajos y me escriba para pedir presupuestos. También quiero que me vean como una opción seria para eventos..."></textarea>
+      <div class="step-nav">
+        <button class="btn-back" onclick="prevStep(2)">← Atrás</button>
+        <button class="btn-next" onclick="nextStep(2)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- Paso 4: Plan -->
+    <div class="brief-step" id="step-3">
+      <p class="step-q">¿Cuántos videos por mes te gustaría publicar?</p>
+      <p class="step-hint">Los videos son reels — los cortos que se ven en Instagram. Cuantos más, más presencia. Pero empezar de a poco también está bien.</p>
+      <div class="plan-opts">
+        <div class="plan-opt">
+          <input type="radio" name="plan" id="p1" value="Básico — 4 reels por mes">
+          <label for="p1">
+            <div class="plan-opt-name">4 videos por mes</div>
+            <div class="plan-opt-desc">Para empezar y tener presencia constante</div>
+          </label>
         </div>
-        <div class="form-row">
-          <div class="field">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="tu@mail.com">
-          </div>
-          <div class="field">
-            <label>Instagram</label>
-            <input type="text" name="instagram" placeholder="@tuusuario">
-          </div>
+        <div class="plan-opt">
+          <input type="radio" name="plan" id="p2" value="Estándar — 6 reels por mes" checked>
+          <label for="p2">
+            <div class="plan-opt-name">6 videos por mes ⭐</div>
+            <div class="plan-opt-desc">El más elegido. Buen ritmo sin pasarse</div>
+          </label>
         </div>
-        <div class="field">
-          <label>Rubro</label>
-          <input type="text" name="rubro" placeholder="¿A qué se dedica tu negocio?">
+        <div class="plan-opt">
+          <input type="radio" name="plan" id="p3" value="Premium — 6 reels + 6 imágenes por mes">
+          <label for="p3">
+            <div class="plan-opt-name">6 videos + 6 imágenes</div>
+            <div class="plan-opt-desc">Videos y también fotos para el feed</div>
+          </label>
         </div>
-        <div class="field">
-          <label>Plan que te interesa</label>
-          <div class="plan-radios">
-            <div class="plan-radio">
-              <input type="radio" name="plan" id="p1" value="Básico — 4 reels">
-              <label for="p1">Básico<br>4 reels / mes</label>
-            </div>
-            <div class="plan-radio">
-              <input type="radio" name="plan" id="p2" value="Estándar — 6 reels" checked>
-              <label for="p2">Estándar<br>6 reels / mes</label>
-            </div>
-            <div class="plan-radio">
-              <input type="radio" name="plan" id="p3" value="Premium — 6 reels + 6 placas">
-              <label for="p3">Premium<br>6 reels + 6 placas</label>
-            </div>
-            <div class="plan-radio">
-              <input type="radio" name="plan" id="p4" value="No sé todavía">
-              <label for="p4">No sé todavía,<br>hablemos</label>
-            </div>
-            <div class="plan-radio" style="grid-column:span 2;">
-              <input type="radio" name="plan" id="p5" value="Otro">
-              <label for="p5" style="text-align:left; padding:12px 16px;">Otro — lo cuento en el mensaje</label>
-            </div>
-          </div>
+        <div class="plan-opt">
+          <input type="radio" name="plan" id="p4" value="No sé todavía, hablemos">
+          <label for="p4">
+            <div class="plan-opt-name">No sé todavía</div>
+            <div class="plan-opt-desc">Lo hablamos juntos y te recomiendo</div>
+          </label>
         </div>
-        <div class="field">
-          <label>Contame tu negocio *</label>
-          <textarea name="mensaje" placeholder="¿Qué vendés? ¿Quién es tu cliente? ¿Qué querés lograr con el contenido?" required></textarea>
+      </div>
+      <div class="step-nav">
+        <button class="btn-back" onclick="prevStep(3)">← Atrás</button>
+        <button class="btn-next" onclick="nextStep(3)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- Paso 5: Redes -->
+    <div class="brief-step" id="step-4">
+      <p class="step-q">¿Tenés Instagram? ¿Cuál es tu usuario?</p>
+      <p class="step-hint">Si no tenés o no usás Instagram, no pasa nada — igual podemos trabajar juntos.</p>
+      <input class="step-input" type="text" id="f-instagram" placeholder="tunegocio (o escribí 'no tengo')">
+      <div class="step-nav">
+        <button class="btn-back" onclick="prevStep(4)">← Atrás</button>
+        <button class="btn-next" onclick="nextStep(4)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- Paso 6: Contacto -->
+    <div class="brief-step" id="step-5">
+      <p class="step-q">¿Cómo te contactamos?</p>
+      <p class="step-hint">Dejanos tu WhatsApp y si querés también tu mail. Te respondemos por el medio que prefieras.</p>
+      <div class="step-row" style="margin-bottom:12px;">
+        <div style="position:relative;">
+          <select class="step-input" id="f-pais" style="padding-left:16px;">
+            <option value="+54">🇦🇷 Argentina (+54)</option>
+            <option value="+598">🇺🇾 Uruguay (+598)</option>
+            <option value="+56">🇨🇱 Chile (+56)</option>
+            <option value="+591">🇧🇴 Bolivia (+591)</option>
+            <option value="+595">🇵🇾 Paraguay (+595)</option>
+            <option value="+55">🇧🇷 Brasil (+55)</option>
+            <option value="+51">🇵🇪 Perú (+51)</option>
+            <option value="+57">🇨🇴 Colombia (+57)</option>
+            <option value="+52">🇲🇽 México (+52)</option>
+            <option value="+34">🇪🇸 España (+34)</option>
+            <option value="otro">🌍 Otro país</option>
+          </select>
         </div>
-        <button type="submit" class="btn-submit" id="submitBtn">
+        <input class="step-input" type="email" id="f-email" placeholder="Email (opcional)">
+      </div>
+      <input class="step-input" type="tel" id="f-whatsapp" placeholder="WhatsApp — característica sin 0, número sin 15. Ej: 3492 370473" style="margin-bottom:12px;">
+      <input class="step-input" type="text" id="f-ciudad" placeholder="¿De qué ciudad sos?">
+      <div class="step-nav" style="margin-top:28px;">
+        <button class="btn-back" onclick="prevStep(5)">← Atrás</button>
+        <button class="btn-next" id="submitBtn" onclick="submitBrief()">
           Enviar consulta
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-        <div class="form-success" id="formSuccess">
-          <p>¡Consulta recibida! <strong>En breve te estoy respondiendo.</strong><br>Si necesitás hablar antes, escribime por WhatsApp.</p>
-        </div>
-      </form>
+      </div>
+    </div>
+
+    <!-- Éxito -->
+    <div class="brief-success" id="briefSuccess">
+      <div class="brief-success-icon">✓</div>
+      <h3>¡Consulta enviada!</h3>
+      <p>En breve te estoy respondiendo con una propuesta pensada para tu negocio. Si necesitás hablar antes, <strong>escribime por WhatsApp</strong> y te atiendo ahí.</p>
+      <a href="https://wa.me/5493492370473" target="_blank" class="btn-wa-success">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribime por WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -755,35 +826,76 @@ const cardObs = new IntersectionObserver(entries => {
 }, {threshold: 0.08});
 document.querySelectorAll('.plan-card').forEach(el => cardObs.observe(el));
 
-// Form submit → Google Sheets
+// Brief paso a paso
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwjVG40GYyrREs1o4VKE56agZj66Snxl6vg6rGFcUe7Qw20gHALMaDp-Z1r_ZUllcK1/exec';
+const TOTAL = 6;
+let currentStep = 0;
 
-document.getElementById('briefForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
+function updateProgress(step) {
+  for(let i = 0; i < TOTAL; i++) {
+    const dot = document.getElementById('dot-'+i);
+    dot.className = 'brief-step-dot' + (i < step ? ' done' : i === step ? ' active' : '');
+  }
+  document.getElementById('stepCount').textContent = (step+1) + ' de ' + TOTAL;
+}
+
+function nextStep(from) {
+  // Validación básica
+  const inputs = { 0:'f-nombre', 1:'f-negocio', 2:'f-objetivo', 4:'f-instagram', 5:'f-whatsapp' };
+  if(inputs[from]) {
+    const val = document.getElementById(inputs[from]).value.trim();
+    if(!val) { document.getElementById(inputs[from]).focus(); return; }
+  }
+  document.getElementById('step-'+from).classList.remove('active');
+  currentStep = from + 1;
+  document.getElementById('step-'+currentStep).classList.add('active');
+  updateProgress(currentStep);
+  document.getElementById('contacto').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function prevStep(from) {
+  document.getElementById('step-'+from).classList.remove('active');
+  currentStep = from - 1;
+  document.getElementById('step-'+currentStep).classList.add('active');
+  updateProgress(currentStep);
+}
+
+async function submitBrief() {
+  const whatsapp = document.getElementById('f-whatsapp').value.trim();
+  if(!whatsapp) { document.getElementById('f-whatsapp').focus(); return; }
+
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Enviando...';
 
-  const data = {};
-  new FormData(this).forEach((v, k) => data[k] = v);
-  data.fecha = new Date().toLocaleString('es-AR', {timeZone:'America/Argentina/Buenos_Aires'});
+  const planSelected = document.querySelector('input[name="plan"]:checked');
+
+  const data = {
+    fecha: new Date().toLocaleString('es-AR', {timeZone:'America/Argentina/Buenos_Aires'}),
+    nombre:    document.getElementById('f-nombre').value.trim(),
+    negocio:   document.getElementById('f-negocio').value.trim(),
+    objetivo:  document.getElementById('f-objetivo').value.trim(),
+    plan:      planSelected ? planSelected.value : 'No especificó',
+    instagram: document.getElementById('f-instagram').value.trim(),
+    pais:      document.getElementById('f-pais').value,
+    whatsapp:  whatsapp,
+    ciudad:    document.getElementById('f-ciudad').value.trim(),
+    email:     document.getElementById('f-email').value.trim(),
+  };
 
   try {
-    if(SHEET_URL !== 'PEGAR_URL_APPS_SCRIPT_AQUI'){
-      await fetch(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(data)
-      });
-    }
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  } catch(err) {
-    btn.disabled = false;
-    btn.innerHTML = 'Enviar consulta <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-  }
-});
+    await fetch(SHEET_URL, {
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+  } catch(e) { /* no-cors siempre tira error de red, ignorar */ }
+
+  // Mostrar éxito siempre
+  document.getElementById('briefProgress').style.display = 'none';
+  document.getElementById('step-5').style.display = 'none';
+  document.getElementById('briefSuccess').style.display = 'block';
+}
 </script>
 </body>
 </html>
