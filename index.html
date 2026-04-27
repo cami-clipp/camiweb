@@ -641,47 +641,53 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
       <div class="brief-step-dot" id="dot-2"></div>
       <div class="brief-step-dot" id="dot-3"></div>
       <div class="brief-step-dot" id="dot-4"></div>
-      <div class="brief-step-dot" id="dot-5"></div>
-      <span class="brief-step-count" id="stepCount">1 de 6</span>
+      <span class="brief-step-count" id="stepCount">1 de 5</span>
     </div>
 
-    <!-- Paso 1: Nombre -->
+    <!-- Paso 1: Nombre + Instagram -->
     <div class="brief-step active" id="step-0">
       <p class="step-q">¿Cómo te llamás y cómo se llama tu negocio?</p>
-      <p class="step-hint">Puede ser tu nombre, el nombre de tu marca, o los dos.</p>
-      <input class="step-input" type="text" id="f-nombre" placeholder="Ej: María — Florería Bloom">
+      <p class="step-hint">Puede ser tu nombre, el de tu marca, o los dos.</p>
+      <input class="step-input" type="text" id="f-nombre" placeholder="Ej: María — Florería Bloom" style="margin-bottom:12px;">
+      <input class="step-input" type="text" id="f-instagram" placeholder="Usuario de Instagram (sin @)">
       <div class="step-nav">
         <span></span>
         <button class="btn-next" onclick="nextStep(0)">Siguiente →</button>
       </div>
     </div>
 
-    <!-- Paso 2: Negocio -->
+    <!-- Paso 2: Contacto -->
     <div class="brief-step" id="step-1">
-      <p class="step-q">¿A qué se dedica tu negocio?</p>
-      <p class="step-hint">Contame qué vendés o qué servicio ofrecés, y a quién le vendés. No hace falta que sea perfecto, escribilo como si me lo contaras por WhatsApp.</p>
-      <textarea class="step-input step-textarea" id="f-negocio" placeholder="Ej: Tengo una florería en Rafaela, vendo arreglos para eventos y ramos personalizados. Mis clientes son mujeres de 25 a 45 años..."></textarea>
-      <div class="step-nav">
+      <p class="step-q">¿Cómo te contactamos?</p>
+      <p class="step-hint">Dejanos tu WhatsApp y si querés también tu mail. Te respondemos por el medio que prefieras.</p>
+      <select class="step-input" id="f-pais" style="margin-bottom:12px;">
+        <option value="+54">🇦🇷 Argentina (+54)</option>
+        <option value="+598">🇺🇾 Uruguay (+598)</option>
+        <option value="+56">🇨🇱 Chile (+56)</option>
+        <option value="+591">🇧🇴 Bolivia (+591)</option>
+        <option value="+595">🇵🇾 Paraguay (+595)</option>
+        <option value="+55">🇧🇷 Brasil (+55)</option>
+        <option value="+51">🇵🇪 Perú (+51)</option>
+        <option value="+57">🇨🇴 Colombia (+57)</option>
+        <option value="+52">🇲🇽 México (+52)</option>
+        <option value="+34">🇪🇸 España (+34)</option>
+        <option value="otro">🌍 Otro país</option>
+      </select>
+      <input class="step-input" type="tel" id="f-whatsapp" placeholder="WhatsApp — característica sin 0, número sin 15. Ej: 3492 370473" style="margin-bottom:12px;">
+      <div class="step-row">
+        <input class="step-input" type="text" id="f-ciudad" placeholder="¿De qué ciudad sos?">
+        <input class="step-input" type="email" id="f-email" placeholder="Email (opcional)">
+      </div>
+      <div class="step-nav" style="margin-top:20px;">
         <button class="btn-back" onclick="prevStep(1)">← Atrás</button>
         <button class="btn-next" onclick="nextStep(1)">Siguiente →</button>
       </div>
     </div>
 
-    <!-- Paso 3: Objetivo -->
+    <!-- Paso 3: Plan -->
     <div class="brief-step" id="step-2">
-      <p class="step-q">¿Qué querés lograr con el contenido?</p>
-      <p class="step-hint">Por ejemplo: que más gente me conozca, que me escriban para comprar, mostrar mis productos, posicionarme como referente, etc. No hay respuesta mala.</p>
-      <textarea class="step-input step-textarea" id="f-objetivo" placeholder="Ej: Quiero que la gente vea mis trabajos y me escriba para pedir presupuestos. También quiero que me vean como una opción seria para eventos..."></textarea>
-      <div class="step-nav">
-        <button class="btn-back" onclick="prevStep(2)">← Atrás</button>
-        <button class="btn-next" onclick="nextStep(2)">Siguiente →</button>
-      </div>
-    </div>
-
-    <!-- Paso 4: Plan -->
-    <div class="brief-step" id="step-3">
-      <p class="step-q">¿Cuántos videos por mes te gustaría publicar?</p>
-      <p class="step-hint">Los videos son reels — los cortos que se ven en Instagram. Cuantos más, más presencia. Pero empezar de a poco también está bien.</p>
+      <p class="step-q">¿Qué plan te interesa?</p>
+      <p class="step-hint">Los videos son reels — los cortos que se ven en Instagram. Si no sabés cuál elegir, no pasa nada, lo vemos juntos.</p>
       <div class="plan-opts">
         <div class="plan-opt">
           <input type="radio" name="plan" id="p1" value="Básico — 4 reels por mes">
@@ -713,48 +719,29 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
         </div>
       </div>
       <div class="step-nav">
+        <button class="btn-back" onclick="prevStep(2)">← Atrás</button>
+        <button class="btn-next" onclick="nextStep(2)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- Paso 4: Negocio -->
+    <div class="brief-step" id="step-3">
+      <p class="step-q">¿A qué se dedica tu negocio?</p>
+      <p class="step-hint">Contame qué vendés o qué servicio ofrecés, y a quién le vendés. Escribilo como si me lo contaras por WhatsApp.</p>
+      <textarea class="step-input step-textarea" id="f-negocio" placeholder="Ej: Tengo una florería en Rafaela, vendo arreglos para eventos y ramos personalizados. Mis clientes son mujeres de 25 a 45 años..."></textarea>
+      <div class="step-nav">
         <button class="btn-back" onclick="prevStep(3)">← Atrás</button>
         <button class="btn-next" onclick="nextStep(3)">Siguiente →</button>
       </div>
     </div>
 
-    <!-- Paso 5: Redes -->
+    <!-- Paso 5: Objetivo -->
     <div class="brief-step" id="step-4">
-      <p class="step-q">¿Tenés Instagram? ¿Cuál es tu usuario?</p>
-      <p class="step-hint">Si no tenés o no usás Instagram, no pasa nada — igual podemos trabajar juntos.</p>
-      <input class="step-input" type="text" id="f-instagram" placeholder="tunegocio (o escribí 'no tengo')">
+      <p class="step-q">¿Qué querés lograr con el contenido?</p>
+      <p class="step-hint">Por ejemplo: que más gente me conozca, que me escriban para comprar, mostrar mis productos, posicionarme como referente... No hay respuesta mala.</p>
+      <textarea class="step-input step-textarea" id="f-objetivo" placeholder="Ej: Quiero que la gente vea mis trabajos y me escriba para pedir presupuestos..."></textarea>
       <div class="step-nav">
         <button class="btn-back" onclick="prevStep(4)">← Atrás</button>
-        <button class="btn-next" onclick="nextStep(4)">Siguiente →</button>
-      </div>
-    </div>
-
-    <!-- Paso 6: Contacto -->
-    <div class="brief-step" id="step-5">
-      <p class="step-q">¿Cómo te contactamos?</p>
-      <p class="step-hint">Dejanos tu WhatsApp y si querés también tu mail. Te respondemos por el medio que prefieras.</p>
-      <div class="step-row" style="margin-bottom:12px;">
-        <div style="position:relative;">
-          <select class="step-input" id="f-pais" style="padding-left:16px;">
-            <option value="+54">🇦🇷 Argentina (+54)</option>
-            <option value="+598">🇺🇾 Uruguay (+598)</option>
-            <option value="+56">🇨🇱 Chile (+56)</option>
-            <option value="+591">🇧🇴 Bolivia (+591)</option>
-            <option value="+595">🇵🇾 Paraguay (+595)</option>
-            <option value="+55">🇧🇷 Brasil (+55)</option>
-            <option value="+51">🇵🇪 Perú (+51)</option>
-            <option value="+57">🇨🇴 Colombia (+57)</option>
-            <option value="+52">🇲🇽 México (+52)</option>
-            <option value="+34">🇪🇸 España (+34)</option>
-            <option value="otro">🌍 Otro país</option>
-          </select>
-        </div>
-        <input class="step-input" type="email" id="f-email" placeholder="Email (opcional)">
-      </div>
-      <input class="step-input" type="tel" id="f-whatsapp" placeholder="WhatsApp — característica sin 0, número sin 15. Ej: 3492 370473" style="margin-bottom:12px;">
-      <input class="step-input" type="text" id="f-ciudad" placeholder="¿De qué ciudad sos?">
-      <div class="step-nav" style="margin-top:28px;">
-        <button class="btn-back" onclick="prevStep(5)">← Atrás</button>
         <button class="btn-next" id="submitBtn" onclick="submitBrief()">
           Enviar consulta
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -828,7 +815,7 @@ document.querySelectorAll('.plan-card').forEach(el => cardObs.observe(el));
 
 // Brief paso a paso
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwjVG40GYyrREs1o4VKE56agZj66Snxl6vg6rGFcUe7Qw20gHALMaDp-Z1r_ZUllcK1/exec';
-const TOTAL = 6;
+const TOTAL = 5;
 let currentStep = 0;
 
 function updateProgress(step) {
@@ -840,11 +827,10 @@ function updateProgress(step) {
 }
 
 function nextStep(from) {
-  // Validación básica
-  const inputs = { 0:'f-nombre', 1:'f-negocio', 2:'f-objetivo', 4:'f-instagram', 5:'f-whatsapp' };
-  if(inputs[from]) {
-    const val = document.getElementById(inputs[from]).value.trim();
-    if(!val) { document.getElementById(inputs[from]).focus(); return; }
+  const required = { 0:'f-nombre', 1:'f-whatsapp' };
+  if(required[from]) {
+    const val = document.getElementById(required[from]).value.trim();
+    if(!val) { document.getElementById(required[from]).focus(); return; }
   }
   document.getElementById('step-'+from).classList.remove('active');
   currentStep = from + 1;
@@ -861,8 +847,8 @@ function prevStep(from) {
 }
 
 async function submitBrief() {
-  const whatsapp = document.getElementById('f-whatsapp').value.trim();
-  if(!whatsapp) { document.getElementById('f-whatsapp').focus(); return; }
+  const objetivo = document.getElementById('f-objetivo').value.trim();
+  if(!objetivo) { document.getElementById('f-objetivo').focus(); return; }
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
@@ -871,16 +857,16 @@ async function submitBrief() {
   const planSelected = document.querySelector('input[name="plan"]:checked');
 
   const data = {
-    fecha: new Date().toLocaleString('es-AR', {timeZone:'America/Argentina/Buenos_Aires'}),
+    fecha:     new Date().toLocaleString('es-AR', {timeZone:'America/Argentina/Buenos_Aires'}),
     nombre:    document.getElementById('f-nombre').value.trim(),
-    negocio:   document.getElementById('f-negocio').value.trim(),
-    objetivo:  document.getElementById('f-objetivo').value.trim(),
-    plan:      planSelected ? planSelected.value : 'No especificó',
     instagram: document.getElementById('f-instagram').value.trim(),
     pais:      document.getElementById('f-pais').value,
-    whatsapp:  whatsapp,
+    whatsapp:  document.getElementById('f-whatsapp').value.trim(),
     ciudad:    document.getElementById('f-ciudad').value.trim(),
     email:     document.getElementById('f-email').value.trim(),
+    plan:      planSelected ? planSelected.value : 'No especificó',
+    negocio:   document.getElementById('f-negocio').value.trim(),
+    objetivo:  objetivo,
   };
 
   try {
@@ -889,11 +875,10 @@ async function submitBrief() {
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(data)
     });
-  } catch(e) { /* no-cors siempre tira error de red, ignorar */ }
+  } catch(e) { /* no-cors — ignorar */ }
 
-  // Mostrar éxito siempre
   document.getElementById('briefProgress').style.display = 'none';
-  document.getElementById('step-5').style.display = 'none';
+  document.getElementById('step-4').style.display = 'none';
   document.getElementById('briefSuccess').style.display = 'block';
 }
 </script>
