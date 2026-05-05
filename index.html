@@ -322,17 +322,17 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
 .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:56px; }
 .portfolio-card {
   background:var(--cream); border:1.5px solid var(--sand); border-radius:20px;
-  padding:36px 32px; text-decoration:none; display:flex; flex-direction:column;
-  gap:24px; transition:all 0.3s; position:relative; overflow:hidden;
+  text-decoration:none; display:flex; flex-direction:column;
+  transition:all 0.3s; position:relative; overflow:hidden;
 }
-.portfolio-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(26,26,26,0.1); border-color:var(--brick); }
-.portfolio-card-top { display:flex; align-items:center; justify-content:space-between; }
-.portfolio-card-top svg { color:var(--muted); transition:color 0.2s; }
-.portfolio-card:hover .portfolio-card-top svg { color:var(--brick); }
+.portfolio-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(26,26,26,0.15); border-color:var(--brick); }
+.portfolio-thumb { width:100%; aspect-ratio:9/16; object-fit:cover; display:block; }
+.portfolio-card-body { padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.portfolio-card-left { display:flex; flex-direction:column; gap:4px; }
 .portfolio-rubro { font-size:10px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--brick); }
-.portfolio-play { width:56px; height:56px; border-radius:50%; background:var(--brick); display:flex; align-items:center; justify-content:center; color:white; transition:transform 0.2s; }
-.portfolio-card:hover .portfolio-play { transform:scale(1.08); }
-.portfolio-label { font-size:13px; font-weight:500; color:var(--dark); letter-spacing:0.02em; }
+.portfolio-label { font-size:13px; font-weight:500; color:var(--dark); }
+.portfolio-play { width:44px; height:44px; border-radius:50%; background:var(--brick); display:flex; align-items:center; justify-content:center; color:white; flex-shrink:0; transition:transform 0.2s; }
+.portfolio-card:hover .portfolio-play { transform:scale(1.1); }
 @media(max-width:960px){ .portfolio-grid { grid-template-columns:repeat(2,1fr); } }
 @media(max-width:600px){ .portfolio-grid { grid-template-columns:1fr; } }
 
@@ -628,58 +628,58 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
     <div class="portfolio-grid reveal" style="transition-delay:0.1s;">
 
       <a href="https://www.instagram.com/reel/DJ1tt1HAMCa/" target="_blank" class="portfolio-card">
-        <div class="portfolio-card-top">
-          <span class="portfolio-rubro">Mueblería</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <img src="IG/muebleria.jpeg" alt="Mueblería" class="portfolio-thumb">
+        <div class="portfolio-card-body">
+          <div class="portfolio-card-left">
+            <span class="portfolio-rubro">Mueblería</span>
+            <span class="portfolio-label">Ver reel →</span>
+          </div>
+          <div class="portfolio-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
-        <div class="portfolio-play">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <p class="portfolio-label">Ver reel en Instagram →</p>
       </a>
 
       <a href="https://www.instagram.com/reel/DXsRJJSgbVA/" target="_blank" class="portfolio-card">
-        <div class="portfolio-card-top">
-          <span class="portfolio-rubro">Deco & Hogar</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <img src="IG/deco.jpeg" alt="Deco & Hogar" class="portfolio-thumb">
+        <div class="portfolio-card-body">
+          <div class="portfolio-card-left">
+            <span class="portfolio-rubro">Deco & Hogar</span>
+            <span class="portfolio-label">Ver reel →</span>
+          </div>
+          <div class="portfolio-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
-        <div class="portfolio-play">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <p class="portfolio-label">Ver reel en Instagram →</p>
       </a>
 
       <a href="https://www.instagram.com/reel/DSVwS2JDlRY/" target="_blank" class="portfolio-card">
-        <div class="portfolio-card-top">
-          <span class="portfolio-rubro">Turismo</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <img src="IG/turismo.jpeg" alt="Turismo" class="portfolio-thumb">
+        <div class="portfolio-card-body">
+          <div class="portfolio-card-left">
+            <span class="portfolio-rubro">Turismo</span>
+            <span class="portfolio-label">Ver reel →</span>
+          </div>
+          <div class="portfolio-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
-        <div class="portfolio-play">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <p class="portfolio-label">Ver reel en Instagram →</p>
       </a>
 
       <a href="https://www.instagram.com/reel/DXIKROVD0Dh/" target="_blank" class="portfolio-card">
-        <div class="portfolio-card-top">
-          <span class="portfolio-rubro">Jurídico</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <img src="IG/juridico.jpeg" alt="Jurídico" class="portfolio-thumb">
+        <div class="portfolio-card-body">
+          <div class="portfolio-card-left">
+            <span class="portfolio-rubro">Jurídico</span>
+            <span class="portfolio-label">Ver reel →</span>
+          </div>
+          <div class="portfolio-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
-        <div class="portfolio-play">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <p class="portfolio-label">Ver reel en Instagram →</p>
       </a>
 
       <a href="https://www.instagram.com/reel/DX9MB1Zxm5V/" target="_blank" class="portfolio-card">
-        <div class="portfolio-card-top">
-          <span class="portfolio-rubro">Kiosco</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <img src="IG/kiosco.jpeg" alt="Kiosco" class="portfolio-thumb">
+        <div class="portfolio-card-body">
+          <div class="portfolio-card-left">
+            <span class="portfolio-rubro">Kiosco</span>
+            <span class="portfolio-label">Ver reel →</span>
+          </div>
+          <div class="portfolio-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
-        <div class="portfolio-play">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <p class="portfolio-label">Ver reel en Instagram →</p>
       </a>
 
     </div>
