@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+<defs>
+  <filter id="paper">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+    <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="blend"/>
+    <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+  </filter>
+  <filter id="rough">
+    <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="4" seed="3" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs>
+
+<!-- PENSAR: cabeza de perfil con engranaje/laberinto mental -->
+<g filter="url(#rough)">
+
+  <!-- Perfil cabeza -->
+  <path d="M210,80 Q270,72 305,110 Q340,148 338,195 Q342,230 325,258 Q318,275 320,295 Q322,310 310,318 Q295,326 278,320 Q265,330 250,335 Q230,338 212,328 Q195,318 190,300 Q178,308 168,300 Q158,290 162,275 Q148,262 142,245 Q130,218 135,185 Q140,140 170,110 Q185,92 210,80 Z"
+    fill="none" stroke="#2B1F1A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Oreja -->
+  <path d="M162,275 Q148,278 144,262 Q140,246 148,237 Q156,228 165,238"
+    fill="none" stroke="#2B1F1A" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Ojo -->
+  <ellipse cx="225" cy="175" rx="16" ry="10" fill="none" stroke="#2B1F1A" stroke-width="3"/>
+  <circle cx="225" cy="175" r="5" fill="#2B1F1A"/>
+  <circle cx="222" cy="172" r="2" fill="#FAF6F1"/>
+
+  <!-- Nariz sutil -->
+  <path d="M272,200 Q278,220 268,228" fill="none" stroke="#2B1F1A" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Boca pensativa -->
+  <path d="M230,265 Q252,270 268,260" fill="none" stroke="#2B1F1A" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Engranaje / laberinto interior del pensamiento -->
+  <!-- Líneas de pensamiento en la cabeza -->
+  <path d="M185,145 Q205,138 225,148 Q245,158 248,178" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6,4"/>
+  <path d="M248,178 Q260,195 252,215 Q244,235 228,238" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6,4"/>
+  <path d="M228,238 Q210,240 198,228 Q186,216 192,200 Q198,184 210,182" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6,4"/>
+
+  <!-- Nodo central del pensamiento -->
+  <circle cx="220" cy="210" r="12" fill="none" stroke="#2B1F1A" stroke-width="3.5"/>
+  <circle cx="220" cy="210" r="5" fill="#C4A882"/>
+
+  <!-- Tramado editorial - sombra cuello -->
+  <line x1="195" y1="310" x2="205" y2="340" stroke="#2B1F1A" stroke-width="1.5" opacity="0.35"/>
+  <line x1="208" y1="312" x2="218" y2="342" stroke="#2B1F1A" stroke-width="1.5" opacity="0.35"/>
+  <line x1="221" y1="313" x2="231" y2="340" stroke="#2B1F1A" stroke-width="1.5" opacity="0.35"/>
+  <line x1="234" y1="311" x2="242" y2="338" stroke="#2B1F1A" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Puntos de pensamiento flotando -->
+  <circle cx="310" cy="120" r="5" fill="none" stroke="#2B1F1A" stroke-width="3"/>
+  <circle cx="335" cy="100" r="8" fill="none" stroke="#2B1F1A" stroke-width="3"/>
+  <circle cx="365" cy="78" r="13" fill="none" stroke="#2B1F1A" stroke-width="3.5"/>
+  <!-- Texto pensamiento -->
+  <text x="352" y="83" font-family="serif" font-size="14" font-style="italic" fill="#2B1F1A" text-anchor="middle">?</text>
+
+</g>
+</svg>

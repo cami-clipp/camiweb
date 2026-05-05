@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+<defs>
+  <filter id="rough">
+    <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="4" seed="2" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs>
+<g filter="url(#rough)">
+
+  <!-- Mano sosteniendo pincel/pluma creativa -->
+  <!-- Palma -->
+  <path d="M185,320 Q170,295 172,265 Q174,240 188,228 Q200,218 215,225 Q222,210 238,208 Q255,206 262,220 Q275,210 290,215 Q305,220 308,238 Q320,232 332,240 Q345,250 340,268 Q338,285 325,292 Q318,320 305,338 Q290,355 268,362 Q245,368 222,358 Q200,348 185,320 Z"
+    fill="none" stroke="#2B1F1A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Dedos -->
+  <!-- Índice levantado sosteniendo -->
+  <path d="M262,220 Q258,185 255,155 Q253,130 262,118 Q272,106 284,112 Q296,118 295,145 Q294,172 290,215"
+    fill="none" stroke="#2B1F1A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Dedo medio -->
+  <path d="M238,208 Q235,172 234,142 Q233,115 244,105 Q255,95 266,102 Q277,109 276,138 Q275,165 262,220"
+    fill="none" stroke="#2B1F1A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Anular -->
+  <path d="M215,225 Q212,195 213,170 Q214,148 224,140 Q234,132 244,140 Q254,148 252,172 Q250,196 238,208"
+    fill="none" stroke="#2B1F1A" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Pluma/pincel entre dedos -->
+  <line x1="270" y1="60" x2="308" y2="175" stroke="#2B1F1A" stroke-width="5" stroke-linecap="round"/>
+  <!-- Punta del pincel -->
+  <path d="M270,60 Q265,50 272,44 Q279,38 284,48 L308,175"
+    fill="#2B1F1A" stroke="#2B1F1A" stroke-width="2"/>
+  <!-- Punta con color -->
+  <path d="M278,52 Q280,44 284,48 Q286,56 282,62 Z" fill="#C4A882"/>
+  <!-- Borde pincel / virola -->
+  <rect x="296" y="155" width="22" height="12" rx="3" fill="none" stroke="#2B1F1A" stroke-width="3" transform="rotate(18 296 155)"/>
+
+  <!-- Trazos creativos saliendo del pincel -->
+  <path d="M255,85 Q230,60 215,72 Q200,84 212,100" fill="none" stroke="#C4A882" stroke-width="3" stroke-linecap="round"/>
+  <path d="M245,70 Q235,40 220,48" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M262,78 Q248,50 258,35 Q268,20 278,32" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M278,70 Q300,48 315,58 Q328,68 318,82" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Asteriscos y destellos creativos -->
+  <line x1="195" y1="85" x2="205" y2="75" stroke="#2B1F1A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="195" y1="75" x2="205" y2="85" stroke="#2B1F1A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="191" y1="80" x2="209" y2="80" stroke="#2B1F1A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <line x1="328" y1="92" x2="338" y2="82" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="328" y1="82" x2="338" y2="92" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="324" y1="87" x2="342" y2="87" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Tramado en palma -->
+  <line x1="205" y1="295" x2="215" y2="348" stroke="#2B1F1A" stroke-width="1.2" opacity="0.3"/>
+  <line x1="220" y1="298" x2="228" y2="352" stroke="#2B1F1A" stroke-width="1.2" opacity="0.3"/>
+  <line x1="235" y1="300" x2="242" y2="355" stroke="#2B1F1A" stroke-width="1.2" opacity="0.3"/>
+  <line x1="250" y1="300" x2="256" y2="355" stroke="#2B1F1A" stroke-width="1.2" opacity="0.3"/>
+  <line x1="265" y1="298" x2="270" y2="352" stroke="#2B1F1A" stroke-width="1.2" opacity="0.3"/>
+  <line x1="280" y1="295" x2="284" y2="342" stroke="#2B1F1A" stroke-width="1.2" opacity="0.3"/>
+
+</g>
+</svg>

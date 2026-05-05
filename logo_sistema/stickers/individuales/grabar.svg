@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+<defs>
+  <filter id="rough">
+    <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="4" seed="7" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs>
+<g filter="url(#rough)">
+
+  <!-- Cámara de mano / video camera -->
+  <!-- Cuerpo principal -->
+  <rect x="95" y="155" width="220" height="155" rx="18" fill="none" stroke="#2B1F1A" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Lente frontal -->
+  <circle cx="175" cy="232" r="55" fill="none" stroke="#2B1F1A" stroke-width="5"/>
+  <circle cx="175" cy="232" r="38" fill="none" stroke="#2B1F1A" stroke-width="3"/>
+  <circle cx="175" cy="232" r="22" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+  <circle cx="175" cy="232" r="9" fill="#2B1F1A"/>
+  <!-- Reflejo lente -->
+  <circle cx="160" cy="218" r="7" fill="none" stroke="#FAF6F1" stroke-width="2" opacity="0.6"/>
+
+  <!-- Visor lateral -->
+  <rect x="315" y="175" width="85" height="55" rx="8" fill="none" stroke="#2B1F1A" stroke-width="4"/>
+  <rect x="325" y="183" width="65" height="39" rx="4" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+  <!-- Conexión visor-cuerpo -->
+  <line x1="315" y1="195" x2="315" y2="215" stroke="#2B1F1A" stroke-width="4"/>
+
+  <!-- Botón REC encima -->
+  <circle cx="265" cy="145" r="18" fill="none" stroke="#2B1F1A" stroke-width="4"/>
+  <circle cx="265" cy="145" r="10" fill="#C4A882"/>
+  <circle cx="265" cy="145" r="5" fill="#2B1F1A"/>
+
+  <!-- Texto REC -->
+  <text x="295" y="140" font-family="monospace" font-size="18" fill="#2B1F1A" font-weight="bold">REC</text>
+  <!-- Puntito parpadeante junto al texto -->
+  <circle cx="344" cy="133" r="5" fill="#C4A882" stroke="#2B1F1A" stroke-width="1.5"/>
+
+  <!-- Agarre inferior -->
+  <path d="M155,310 Q155,355 168,368 Q182,380 220,378 Q258,376 265,360 Q272,344 268,310"
+    fill="none" stroke="#2B1F1A" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Tramado sombra en cuerpo cámara -->
+  <line x1="250" y1="165" x2="250" y2="300" stroke="#2B1F1A" stroke-width="1.2" opacity="0.2"/>
+  <line x1="265" y1="165" x2="265" y2="300" stroke="#2B1F1A" stroke-width="1.2" opacity="0.2"/>
+  <line x1="280" y1="165" x2="280" y2="300" stroke="#2B1F1A" stroke-width="1.2" opacity="0.2"/>
+  <line x1="295" y1="165" x2="295" y2="300" stroke="#2B1F1A" stroke-width="1.2" opacity="0.2"/>
+  <line x1="310" y1="165" x2="310" y2="300" stroke="#2B1F1A" stroke-width="1.2" opacity="0.2"/>
+
+  <!-- Líneas de grabación / señal -->
+  <path d="M405,200 Q420,215 420,232 Q420,249 405,264" fill="none" stroke="#C4A882" stroke-width="3" stroke-linecap="round"/>
+  <path d="M415,188 Q438,210 438,232 Q438,254 415,276" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M425,176 Q456,205 456,232 Q456,259 425,288" fill="none" stroke="#C4A882" stroke-width="2" stroke-linecap="round"/>
+
+</g>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+<defs>
+  <filter id="rough">
+    <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="4" seed="14" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs>
+<g filter="url(#rough)">
+
+  <!-- Celular con contenido subiendo / publicando -->
+  <!-- Cuerpo del teléfono -->
+  <rect x="155" y="95" width="190" height="330" rx="24" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+  <!-- Pantalla -->
+  <rect x="170" y="118" width="160" height="265" rx="10" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <!-- Notch/cámara frontal -->
+  <rect x="225" y="105" width="50" height="10" rx="5" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+
+  <!-- Contenido en pantalla - imagen/post -->
+  <rect x="178" y="128" width="144" height="105" rx="6" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- Paisaje dentro del post - líneas simples -->
+  <path d="M178,200 Q200,175 218,185 Q236,195 248,180 Q262,165 278,178 Q292,190 322,195" fill="none" stroke="#E8D8C0" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="295" cy="150" rx="20" ry="20" fill="none" stroke="#E8D8C0" stroke-width="2"/>
+  <line x1="295" y1="130" x2="295" y2="128" stroke="#E8D8C0" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Texto debajo del post -->
+  <line x1="178" y1="248" x2="290" y2="248" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="178" y1="262" x2="265" y2="262" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="178" y1="275" x2="280" y2="275" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Likes/interacciones -->
+  <path d="M178,300 Q183,292 190,295 Q197,292 202,300 Q205,308 190,318 Q175,308 178,300 Z"
+    fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="212" y="314" font-family="monospace" font-size="14" fill="#FFFFFF">24.5K</text>
+
+  <!-- Flecha grande de subir / publicar saliendo del teléfono -->
+  <line x1="380" y1="350" x2="380" y2="148" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="362,175 398,175 380,142" fill="#FFFFFF"/>
+
+  <!-- Líneas de velocidad/movimiento alrededor de la flecha -->
+  <line x1="360" y1="220" x2="340" y2="220" stroke="#E8D8C0" stroke-width="3" stroke-linecap="round"/>
+  <line x1="355" y1="240" x2="332" y2="240" stroke="#E8D8C0" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="360" y1="260" x2="340" y2="260" stroke="#E8D8C0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="400" y1="220" x2="420" y2="220" stroke="#E8D8C0" stroke-width="3" stroke-linecap="round"/>
+  <line x1="405" y1="240" x2="428" y2="240" stroke="#E8D8C0" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="400" y1="260" x2="420" y2="260" stroke="#E8D8C0" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Tramado lateral teléfono -->
+  <line x1="345" y1="130" x2="345" y2="290" stroke="#FFFFFF" stroke-width="1" opacity="0.2"/>
+  <line x1="352" y1="128" x2="352" y2="292" stroke="#FFFFFF" stroke-width="1" opacity="0.2"/>
+
+  <!-- Pequeñas partículas subiendo -->
+  <circle cx="420" cy="160" r="4" fill="#E8D8C0" opacity="0.8"/>
+  <circle cx="435" cy="135" r="3" fill="#E8D8C0" opacity="0.6"/>
+  <circle cx="408" cy="118" r="2.5" fill="#E8D8C0" opacity="0.5"/>
+  <circle cx="340" cy="155" r="3.5" fill="#E8D8C0" opacity="0.7"/>
+  <circle cx="328" cy="128" r="2.5" fill="#E8D8C0" opacity="0.5"/>
+
+</g>
+</svg>

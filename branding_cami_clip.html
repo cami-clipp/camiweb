@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cami.clipp — Brand Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream:  #FAF6F1;
+    --sand:   #EDE3D6;
+    --mocha:  #8B6552;
+    --terrac: #C4683A;
+    --dark:   #2B1F1A;
+    --accent: #D4A96A;
+  }
+
+  body {
+    background: #F2EDE8;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    padding: 60px 40px;
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  /* ── SECCIÓN ── */
+  .section { display: flex; flex-direction: column; gap: 24px; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terrac);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    border-bottom: 1.5px solid var(--sand);
+    padding-bottom: 12px;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--dark);
+    border-radius: 24px;
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: var(--terrac);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.25;
+    top: -80px; right: -80px;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    background: var(--accent);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+    bottom: -60px; left: -40px;
+  }
+
+  .cover-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .cover-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+
+  .cover-name span { color: var(--terrac); }
+
+  .cover-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .cover-version {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── IDENTIDAD ── */
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .identity-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1.5px solid var(--sand);
+  }
+
+  .identity-card h3 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terrac);
+    margin-bottom: 12px;
+  }
+
+  .identity-card p {
+    font-size: 14px;
+    color: var(--mocha);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .kw {
+    background: var(--sand);
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── COLORES ── */
+  .palette {
+    display: flex;
+    gap: 16px;
+  }
+
+  .swatch {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+
+  .swatch-color {
+    height: 110px;
+  }
+
+  .swatch-info {
+    background: white;
+    padding: 14px 16px;
+  }
+
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dark);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .swatch-hex {
+    font-size: 11px;
+    color: var(--mocha);
+    letter-spacing: 0.08em;
+    font-family: 'Courier New', monospace;
+  }
+
+  .swatch-use {
+    font-size: 10px;
+    color: var(--mocha);
+    margin-top: 4px;
+    font-weight: 300;
+    line-height: 1.4;
+    opacity: 0.8;
+  }
+
+  /* ── TIPOGRAFÍA ── */
+  .type-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .type-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 36px;
+    border: 1.5px solid var(--sand);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .type-meta { min-width: 180px; }
+
+  .type-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--terrac);
+    margin-bottom: 6px;
+  }
+
+  .type-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .type-desc {
+    font-size: 12px;
+    color: var(--mocha);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .type-sample-playfair {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .type-sample-dm {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--mocha);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .type-weights {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .weight-sample {
+    font-size: 13px;
+    color: var(--dark);
+  }
+
+  /* ── ESTÉTICA ── */
+  .aesthetic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .aesthetic-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1.5px solid var(--sand);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .aesthetic-icon {
+    font-size: 28px;
+  }
+
+  .aesthetic-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    letter-spacing: 0.04em;
+  }
+
+  .aesthetic-desc {
+    font-size: 12px;
+    color: var(--mocha);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── VOZ ── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .voice-card {
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+
+  .voice-card.si {
+    background: var(--dark);
+    color: white;
+  }
+
+  .voice-card.no {
+    background: white;
+    border: 1.5px solid var(--sand);
+  }
+
+  .voice-card h3 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .voice-card.si h3 { color: var(--accent); }
+  .voice-card.no h3 { color: var(--terrac); }
+
+  .voice-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .voice-card.si .voice-item { color: rgba(255,255,255,0.8); }
+  .voice-card.no .voice-item { color: var(--mocha); }
+
+  .vi { color: #6EBF8B; font-weight: 600; }
+  .vx { color: #E07070; font-weight: 600; }
+
+  /* ── APLICACIONES ── */
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .app-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--sand);
+  }
+
+  .app-preview {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .app-label {
+    background: white;
+    padding: 14px 18px;
+    font-size: 12px;
+    color: var(--mocha);
+    font-weight: 300;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    background: var(--dark);
+    border-radius: 20px;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <p class="cover-tag">Brand Identity Guide</p>
+    <h1 class="cover-name">cami<span>.clipp</span></h1>
+    <p class="cover-sub">Creadora de Contenido · UGC · @cami.clippp</p>
+    <p class="cover-version">v1.0 · 2025</p>
+  </div>
+
+  <!-- IDENTIDAD -->
+  <div class="section">
+    <p class="section-label">01</p>
+    <h2 class="section-title">Identidad de Marca</h2>
+    <div class="identity-grid">
+      <div class="identity-card">
+        <h3>Propósito</h3>
+        <p>Crear contenido auténtico que conecte marcas con personas reales. No publicidad genérica — historias que generan confianza y convierten.</p>
+      </div>
+      <div class="identity-card">
+        <h3>Público objetivo</h3>
+        <p>Marcas y emprendimientos que buscan presencia en redes con contenido de calidad, sin el costo de una agencia.</p>
+      </div>
+      <div class="identity-card">
+        <h3>Personalidad</h3>
+        <div class="keywords">
+          <span class="kw">Auténtica</span>
+          <span class="kw">Cálida</span>
+          <span class="kw">Profesional</span>
+          <span class="kw">Cercana</span>
+          <span class="kw">Creativa</span>
+          <span class="kw">Confiable</span>
+        </div>
+      </div>
+      <div class="identity-card">
+        <h3>Diferencial</h3>
+        <p>Contenido que parece orgánico pero está pensado para vender. La persona detrás de la cámara ya tiene comunidad y credibilidad.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLORES -->
+  <div class="section">
+    <p class="section-label">02</p>
+    <h2 class="section-title">Paleta de Colores</h2>
+    <div class="palette">
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C4683A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Terracota</span>
+          <span class="swatch-hex">#C4683A</span>
+          <p class="swatch-use">Color principal. CTAs, acentos, nombre de marca.</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2B1F1A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Espresso</span>
+          <span class="swatch-hex">#2B1F1A</span>
+          <p class="swatch-use">Texto principal, fondos oscuros, contraste.</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D4A96A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Arena dorada</span>
+          <span class="swatch-hex">#D4A96A</span>
+          <p class="swatch-use">Acento secundario, detalles decorativos.</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAF6F1;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Crema</span>
+          <span class="swatch-hex">#FAF6F1</span>
+          <p class="swatch-use">Fondo principal. Base de todos los diseños.</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#EDE3D6;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Lino</span>
+          <span class="swatch-hex">#EDE3D6</span>
+          <p class="swatch-use">Fondos secundarios, divisores, bordes sutiles.</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8B6552;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Mocha</span>
+          <span class="swatch-hex">#8B6552</span>
+          <p class="swatch-use">Texto secundario, subtítulos, descripciones.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIPOGRAFÍA -->
+  <div class="section">
+    <p class="section-label">03</p>
+    <h2 class="section-title">Tipografía</h2>
+    <div class="type-grid">
+
+      <div class="type-card">
+        <div class="type-meta">
+          <p class="type-label">Primaria · Display</p>
+          <p class="type-name">Playfair Display</p>
+          <p class="type-desc">Para títulos, nombre de marca y textos que necesitan presencia. Elegante, con personalidad.</p>
+          <div class="type-weights">
+            <span class="weight-sample" style="font-family:'Playfair Display',serif; font-weight:400;">Regular</span>
+            <span class="weight-sample" style="font-family:'Playfair Display',serif; font-weight:700;">Bold</span>
+            <span class="weight-sample" style="font-family:'Playfair Display',serif; font-style:italic;">Italic</span>
+          </div>
+        </div>
+        <div>
+          <p class="type-sample-playfair">cami.clipp</p>
+          <p style="font-family:'Playfair Display',serif; font-size:18px; color:var(--mocha); margin-top:8px; font-style:italic;">Contenido que convierte</p>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-meta">
+          <p class="type-label">Secundaria · Texto</p>
+          <p class="type-name">DM Sans</p>
+          <p class="type-desc">Para cuerpo de texto, descripciones, botones y UI en general. Moderna y muy legible.</p>
+          <div class="type-weights">
+            <span class="weight-sample" style="font-weight:300;">Light</span>
+            <span class="weight-sample" style="font-weight:400;">Regular</span>
+            <span class="weight-sample" style="font-weight:600;">SemiBold</span>
+          </div>
+        </div>
+        <div>
+          <p class="type-sample-dm">Reels · Placas · Historias<br>Contenido a medida de tu marca.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ESTÉTICA -->
+  <div class="section">
+    <p class="section-label">04</p>
+    <h2 class="section-title">Estética General</h2>
+    <div class="aesthetic-grid">
+
+      <div class="aesthetic-card">
+        <div class="aesthetic-icon">🌿</div>
+        <p class="aesthetic-title">Orgánico & Cálido</p>
+        <p class="aesthetic-desc">Tonos tierra, texturas suaves. Nada frío ni corporativo. Que se sienta humano.</p>
+      </div>
+
+      <div class="aesthetic-card">
+        <div class="aesthetic-icon">✦</div>
+        <p class="aesthetic-title">Minimalista</p>
+        <p class="aesthetic-desc">Respiración en el diseño. Pocos elementos, bien puestos. Menos ruido, más impacto.</p>
+      </div>
+
+      <div class="aesthetic-card">
+        <div class="aesthetic-icon">◈</div>
+        <p class="aesthetic-title">Editorial</p>
+        <p class="aesthetic-desc">Tipografía con jerarquía, composición cuidada. Que se vea producido sin perder naturalidad.</p>
+      </div>
+
+      <div class="aesthetic-card">
+        <div class="aesthetic-icon">◎</div>
+        <p class="aesthetic-title">Sin filtros de moda</p>
+        <p class="aesthetic-desc">Sin tendencias pasajeras. Estética atemporal que no envejece en 3 meses.</p>
+      </div>
+
+      <div class="aesthetic-card">
+        <div class="aesthetic-icon">▲</div>
+        <p class="aesthetic-title">Contrastes con propósito</p>
+        <p class="aesthetic-desc">Oscuro sobre claro, acento sobre neutro. Cada contraste guía la mirada hacia lo importante.</p>
+      </div>
+
+      <div class="aesthetic-card">
+        <div class="aesthetic-icon">◐</div>
+        <p class="aesthetic-title">Femenino sin clichés</p>
+        <p class="aesthetic-desc">Sin pastel ni rosas. Femenino desde lo cálido, lo orgánico y la confianza.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOZ -->
+  <div class="section">
+    <p class="section-label">05</p>
+    <h2 class="section-title">Voz & Tono</h2>
+    <div class="voice-grid">
+
+      <div class="voice-card si">
+        <h3>Usar ✓</h3>
+        <div class="voice-item"><span class="vi">✓</span> Lenguaje cercano y directo</div>
+        <div class="voice-item"><span class="vi">✓</span> Palabras simples que conectan</div>
+        <div class="voice-item"><span class="vi">✓</span> Seguridad sin soberbia</div>
+        <div class="voice-item"><span class="vi">✓</span> Humor sutil y natural</div>
+        <div class="voice-item"><span class="vi">✓</span> Honestidad sobre los productos</div>
+        <div class="voice-item"><span class="vi">✓</span> Llamadas a la acción claras</div>
+      </div>
+
+      <div class="voice-card no">
+        <h3>Evitar ✗</h3>
+        <div class="voice-item"><span class="vx">✗</span> Tecnicismos de marketing</div>
+        <div class="voice-item"><span class="vx">✗</span> Frases genéricas ("¡el mejor!")</div>
+        <div class="voice-item"><span class="vx">✗</span> Tono agresivo o de presión</div>
+        <div class="voice-item"><span class="vx">✗</span> Exceso de emojis</div>
+        <div class="voice-item"><span class="vx">✗</span> Formalidad innecesaria</div>
+        <div class="voice-item"><span class="vx">✗</span> Promesas exageradas</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- APLICACIONES -->
+  <div class="section">
+    <p class="section-label">06</p>
+    <h2 class="section-title">Aplicaciones de Marca</h2>
+    <div class="app-grid">
+
+      <div class="app-card">
+        <div class="app-preview" style="background:var(--dark); color:white; flex-direction:column; gap:4px;">
+          <span style="font-family:'Playfair Display',serif; font-size:22px; font-weight:700;">cami<span style="color:var(--terrac);">.clip</span></span>
+          <span style="font-size:10px; color:rgba(255,255,255,0.4); letter-spacing:0.15em; text-transform:uppercase;">@cami.clippp</span>
+        </div>
+        <div class="app-label">Logo sobre fondo oscuro</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-preview" style="background:var(--cream); color:var(--dark); flex-direction:column; gap:4px; border-bottom:1px solid var(--sand);">
+          <span style="font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--dark);">cami<span style="color:var(--terrac);">.clip</span></span>
+          <span style="font-size:10px; color:var(--mocha); letter-spacing:0.15em; text-transform:uppercase;">@cami.clippp</span>
+        </div>
+        <div class="app-label">Logo sobre fondo claro</div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-preview" style="background:var(--terrac); color:white; flex-direction:column; gap:4px;">
+          <span style="font-family:'Playfair Display',serif; font-size:22px; font-weight:700;">cami<span style="color:var(--cream);">.clip</span></span>
+          <span style="font-size:10px; color:rgba(255,255,255,0.6); letter-spacing:0.15em; text-transform:uppercase;">@cami.clippp</span>
+        </div>
+        <div class="app-label">Logo sobre color acento</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>cami.clipp</span>
+    Documento de identidad de marca · Uso interno · v1.0
+  </div>
+
+</div>
+</body>
+</html>

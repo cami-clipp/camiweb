@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400" role="img" aria-label="cami clipp isotipo lente">
+  <title>cami clipp — Lente</title>
+
+  <!-- Anillo exterior -->
+  <circle cx="50" cy="50" r="40" fill="#2B1F1A"/>
+
+  <!-- Anillo medio -->
+  <circle cx="50" cy="50" r="30" fill="none" stroke="#FAF6F1" stroke-width="2"/>
+
+  <!-- Apertura del lente — pétalos de diafragma -->
+  <circle cx="50" cy="50" r="18" fill="#FAF6F1"/>
+
+  <!-- Iris / diafragma — hojas -->
+  <g fill="#2B1F1A">
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(0 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="36" rx="5" ry="10" transform="rotate(315 50 50)"/>
+  </g>
+
+  <!-- Círculo central -->
+  <circle cx="50" cy="50" r="7" fill="#2B1F1A"/>
+  <circle cx="50" cy="50" r="3" fill="#C4A882"/>
+
+  <!-- Reflejo de luz -->
+  <circle cx="40" cy="40" r="4" fill="#FAF6F1" opacity="0.3"/>
+  <circle cx="37" cy="38" r="2" fill="#FAF6F1" opacity="0.5"/>
+
+  <!-- Marca pequeña en el anillo exterior -->
+  <text x="50" y="96" font-family="'Arial', sans-serif" font-size="6" font-weight="700" fill="#FAF6F1" text-anchor="middle" letter-spacing="2" opacity="0.6">CAMI CLIPP</text>
+</svg>

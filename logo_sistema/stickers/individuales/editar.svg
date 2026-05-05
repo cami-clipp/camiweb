@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+<defs>
+  <filter id="rough">
+    <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="4" seed="11" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs>
+<g filter="url(#rough)">
+
+  <!-- Timeline de edición - pantalla laptop -->
+  <rect x="70" y="80" width="360" height="230" rx="14" fill="none" stroke="#2B1F1A" stroke-width="5"/>
+  <!-- Barra superior pantalla -->
+  <rect x="70" y="80" width="360" height="28" rx="14" fill="none" stroke="#2B1F1A" stroke-width="5"/>
+  <line x1="70" y1="108" x2="430" y2="108" stroke="#2B1F1A" stroke-width="4"/>
+  <!-- Botones ventana -->
+  <circle cx="98" cy="94" r="6" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+  <circle cx="118" cy="94" r="6" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+  <circle cx="138" cy="94" r="6" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+
+  <!-- Pistas de timeline -->
+  <!-- Pista 1 -->
+  <rect x="90" y="125" width="310" height="28" rx="4" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+  <rect x="90" y="125" width="115" height="28" rx="4" fill="#C4A882" opacity="0.5"/>
+  <rect x="218" y="125" width="85" height="28" rx="4" fill="#C4A882" opacity="0.7"/>
+  <rect x="318" y="125" width="82" height="28" rx="4" fill="#C4A882" opacity="0.4"/>
+
+  <!-- Pista 2 -->
+  <rect x="90" y="162" width="310" height="28" rx="4" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+  <rect x="90" y="162" width="68" height="28" rx="4" fill="#2B1F1A" opacity="0.18"/>
+  <rect x="172" y="162" width="128" height="28" rx="4" fill="#2B1F1A" opacity="0.12"/>
+  <rect x="315" y="162" width="85" height="28" rx="4" fill="#2B1F1A" opacity="0.18"/>
+
+  <!-- Pista 3 audio -->
+  <rect x="90" y="199" width="310" height="16" rx="3" fill="none" stroke="#2B1F1A" stroke-width="2"/>
+  <!-- Forma de onda de audio -->
+  <path d="M95,207 Q105,199 115,207 Q125,215 135,207 Q145,199 155,207 Q165,215 175,207 Q185,199 195,207 Q205,215 215,207 Q225,199 235,207 Q245,215 255,207 Q265,199 275,207 Q285,215 295,207 Q305,199 315,207 Q325,215 335,207 Q345,199 355,207 Q365,215 375,207 Q385,199 395,207"
+    fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Cabezal de reproducción -->
+  <line x1="238" y1="115" x2="238" y2="225" stroke="#C4A882" stroke-width="3.5"/>
+  <polygon points="230,113 246,113 238,121" fill="#C4A882"/>
+
+  <!-- Tijeras de corte - gesto editorial -->
+  <!-- Eje -->
+  <circle cx="148" cy="285" r="7" fill="none" stroke="#2B1F1A" stroke-width="3"/>
+  <!-- Hoja 1 -->
+  <path d="M148,285 Q118,260 95,248 Q82,242 80,252 Q78,262 95,268 Q112,274 142,290"
+    fill="none" stroke="#2B1F1A" stroke-width="4.5" stroke-linecap="round"/>
+  <ellipse cx="82" cy="252" rx="14" ry="10" fill="none" stroke="#2B1F1A" stroke-width="3.5" transform="rotate(-20 82 252)"/>
+  <!-- Hoja 2 -->
+  <path d="M148,285 Q118,310 95,322 Q82,328 80,318 Q78,308 95,302 Q112,296 142,280"
+    fill="none" stroke="#2B1F1A" stroke-width="4.5" stroke-linecap="round"/>
+  <ellipse cx="82" cy="318" rx="14" ry="10" fill="none" stroke="#2B1F1A" stroke-width="3.5" transform="rotate(20 82 318)"/>
+
+  <!-- Cursor de flecha -->
+  <path d="M300,270 L300,340 L316,324 L326,348 L336,344 L326,320 L348,320 Z"
+    fill="none" stroke="#2B1F1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Base laptop -->
+  <path d="M55,310 L445,310 Q455,310 460,318 L465,332 Q465,338 458,338 L42,338 Q35,338 35,332 L40,318 Q45,310 55,310 Z"
+    fill="none" stroke="#2B1F1A" stroke-width="4.5"/>
+  <!-- Touchpad -->
+  <rect x="210" y="318" width="80" height="12" rx="5" fill="none" stroke="#2B1F1A" stroke-width="2.5"/>
+
+  <!-- Tramado sombra lateral -->
+  <line x1="415" y1="120" x2="415" y2="295" stroke="#2B1F1A" stroke-width="1" opacity="0.25"/>
+  <line x1="422" y1="120" x2="422" y2="295" stroke="#2B1F1A" stroke-width="1" opacity="0.25"/>
+
+</g>
+</svg>

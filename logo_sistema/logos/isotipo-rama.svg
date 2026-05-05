@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400" role="img" aria-label="cami clipp isotipo rama">
+  <title>cami clipp — Rama C</title>
+
+  <!-- Tronco vertical principal que forma el lado izquierdo de la C -->
+  <path d="M38,88 Q34,70 34,50 Q34,30 38,12" stroke="#2B1F1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Brazo superior (parte de arriba de la C) -->
+  <path d="M38,13 Q52,8 64,12 Q72,15 75,22" stroke="#2B1F1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Brazo inferior (parte de abajo de la C) -->
+  <path d="M38,87 Q52,92 64,88 Q72,85 75,78" stroke="#2B1F1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Ramas laterales del tronco -->
+  <path d="M36,42 Q26,36 18,38" stroke="#2B1F1A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M36,60 Q26,64 18,62" stroke="#2B1F1A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M36,52 Q30,46 24,44" stroke="#2B1F1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Hojas — brazo superior rama 1 -->
+  <ellipse cx="17" cy="37" rx="7" ry="4" fill="#2B1F1A" transform="rotate(-20 17 37)"/>
+  <ellipse cx="15" cy="40" rx="5" ry="3" fill="#C4A882" transform="rotate(-25 15 40)" opacity="0.9"/>
+
+  <!-- Hojas — rama lateral izquierda abajo -->
+  <ellipse cx="17" cy="62" rx="7" ry="4" fill="#2B1F1A" transform="rotate(15 17 62)"/>
+  <ellipse cx="15" cy="59" rx="5" ry="3" fill="#C4A882" transform="rotate(20 15 59)" opacity="0.9"/>
+
+  <!-- Hoja pequeña rama corta -->
+  <ellipse cx="23" cy="43" rx="5" ry="3" fill="#2B1F1A" transform="rotate(-30 23 43)"/>
+
+  <!-- Hojitas en extremos del brazo superior de la C -->
+  <ellipse cx="72" cy="19" rx="6" ry="3.5" fill="#2B1F1A" transform="rotate(30 72 19)"/>
+  <ellipse cx="76" cy="22" rx="4" ry="2.5" fill="#C4A882" transform="rotate(45 76 22)" opacity="0.9"/>
+
+  <!-- Hojitas en extremos del brazo inferior de la C -->
+  <ellipse cx="72" cy="81" rx="6" ry="3.5" fill="#2B1F1A" transform="rotate(-30 72 81)"/>
+  <ellipse cx="76" cy="78" rx="4" ry="2.5" fill="#C4A882" transform="rotate(-45 76 78)" opacity="0.9"/>
+
+  <!-- Pequeña ramita en el tronco superior -->
+  <path d="M37,26 Q44,20 48,18" stroke="#2B1F1A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="49" cy="17" rx="5" ry="3" fill="#2B1F1A" transform="rotate(-15 49 17)"/>
+
+  <!-- Pequeña ramita en el tronco inferior -->
+  <path d="M37,74 Q44,80 48,82" stroke="#2B1F1A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="49" cy="83" rx="5" ry="3" fill="#2B1F1A" transform="rotate(15 49 83)"/>
+</svg>

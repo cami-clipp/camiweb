@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400" role="img" aria-label="cami clipp isotipo clapperboard">
+  <title>cami clipp — Claquete</title>
+
+  <!-- Cuerpo del claquete -->
+  <rect x="12" y="32" width="76" height="56" rx="4" fill="#2B1F1A"/>
+
+  <!-- Tapa del claquete -->
+  <rect x="12" y="20" width="76" height="16" rx="3" fill="#2B1F1A"/>
+
+  <!-- Bisagra izquierda -->
+  <rect x="12" y="17" width="8" height="22" rx="2" fill="#2B1F1A"/>
+
+  <!-- Rayas del claquete (tapa) — blanco/arena alternado -->
+  <clipPath id="tapa">
+    <rect x="12" y="20" width="76" height="16" rx="3"/>
+  </clipPath>
+  <g clip-path="url(#tapa)">
+    <polygon points="12,20 22,20 12,36" fill="#FAF6F1"/>
+    <polygon points="22,20 32,20 22,36 12,36" fill="#C4A882"/>
+    <polygon points="32,20 42,20 32,36 22,36" fill="#FAF6F1"/>
+    <polygon points="42,20 52,20 42,36 32,36" fill="#C4A882"/>
+    <polygon points="52,20 62,20 52,36 42,36" fill="#FAF6F1"/>
+    <polygon points="62,20 72,20 62,36 52,36" fill="#C4A882"/>
+    <polygon points="72,20 82,20 72,36 62,36" fill="#FAF6F1"/>
+    <polygon points="82,20 88,20 88,28 72,36 62,36" fill="#C4A882"/>
+  </g>
+
+  <!-- Línea divisoria claquete -->
+  <line x1="12" y1="36" x2="88" y2="36" stroke="#FAF6F1" stroke-width="1.5"/>
+
+  <!-- Texto "c." dentro del cuerpo -->
+  <text x="50" y="72" font-family="Georgia, serif" font-size="28" font-weight="700" font-style="italic" fill="#FAF6F1" text-anchor="middle">c.</text>
+
+  <!-- Pequeño punto de grabación -->
+  <circle cx="78" cy="44" r="4" fill="#C4A882"/>
+  <circle cx="78" cy="44" r="2" fill="#2B1F1A"/>
+</svg>
