@@ -318,6 +318,13 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
 .footer-ig { display:inline-block; margin-top:18px; font-size:13px; color:rgba(255,255,255,0.35); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:2px; transition:all 0.2s; }
 .footer-ig:hover { color:var(--brick); border-color:var(--brick); }
 
+/* ── PORTFOLIO ── */
+.portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:56px; }
+.portfolio-item { display:flex; flex-direction:column; gap:12px; }
+.portfolio-rubro { font-size:10px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--brick); }
+@media(max-width:960px){ .portfolio-grid { grid-template-columns:repeat(2,1fr); gap:24px; } }
+@media(max-width:600px){ .portfolio-grid { grid-template-columns:1fr; } }
+
 /* ── WA FLOTANTE ── */
 .wa-float {
   position:fixed; bottom:32px; right:32px; z-index:200;
@@ -386,6 +393,7 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
   <a href="#" class="nav-logo">cami<span>.clipp</span></a>
   <div class="nav-links">
     <a href="#servicios" class="nav-link">Servicios</a>
+    <a href="#portfolio" class="nav-link">Portfolio</a>
     <a href="#planes" class="nav-link">Planes</a>
     <a href="#remoto" class="nav-link">Trabajo remoto</a>
   </div>
@@ -593,6 +601,46 @@ footer { padding:56px 48px; border-top:1px solid rgba(255,255,255,0.06); backgro
       <span class="rubro">Peluquería & Estética</span>
       <span class="rubro">Apps & Tecnología</span>
       <span class="rubro">Emprendimientos</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio" style="background:white;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Trabajos recientes</p>
+      <h2 class="section-title">Lo que hacemos<br><em>en acción.</em></h2>
+      <p class="section-sub">Contenido real para marcas reales. Cada video pensado con estrategia desde el guión hasta la edición.</p>
+    </div>
+
+    <div class="portfolio-grid reveal" style="transition-delay:0.1s;">
+
+      <div class="portfolio-item">
+        <p class="portfolio-rubro">Mueblería</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DJ1tt1HAMCa/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 4px 24px rgba(26,26,26,0.08); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"></blockquote>
+      </div>
+
+      <div class="portfolio-item">
+        <p class="portfolio-rubro">Deco & Hogar</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DXsRJJSgbVA/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 4px 24px rgba(26,26,26,0.08); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"></blockquote>
+      </div>
+
+      <div class="portfolio-item">
+        <p class="portfolio-rubro">Turismo</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSVwS2JDlRY/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 4px 24px rgba(26,26,26,0.08); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"></blockquote>
+      </div>
+
+      <div class="portfolio-item">
+        <p class="portfolio-rubro">Jurídico</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DXIKROVD0Dh/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 4px 24px rgba(26,26,26,0.08); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"></blockquote>
+      </div>
+
+      <div class="portfolio-item">
+        <p class="portfolio-rubro">Kiosco</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DX9MB1Zxm5V/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 4px 24px rgba(26,26,26,0.08); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"></blockquote>
+      </div>
+
     </div>
   </div>
 </section>
@@ -883,5 +931,6 @@ async function submitBrief() {
   document.getElementById('briefSuccess').style.display = 'block';
 }
 </script>
+<script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
